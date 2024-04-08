@@ -23,7 +23,16 @@ void HistManager::InitializeHists()
   int h_zmax=3000;
   int r_max=3600;
 
-  h1[static_cast<int>(h1::energy_evt)] = new TH1F("energy_evt","",100,0,100);
+  // int h_xmin=-500;
+  // int h_xmax=500;
+  // int h_ymin=1750;
+  // int h_ymax=3500;
+  // int h_zmin=-1000;
+  // int h_zmax=1000;
+  // int r_max=3600;
+
+
+  h1[static_cast<int>(h1::energy_evt)] = new TH1F("energy_evt","",1000,0,1000);
   h1[static_cast<int>(h1::fem_evt)] = new TH1F("fem_evt","",1000,0,1000);
 
   h1[static_cast<int>(h1::energy)] = new TH1F("energy","",10000,0,0.1);
