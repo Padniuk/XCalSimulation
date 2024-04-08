@@ -99,7 +99,12 @@ void EventAnalyzer::Analyze()
         _edep+=_scdata.scene[ihit];
         _hm.h3_pos[_evdata.evevt]->Fill(_scdata.scpox[ihit], _scdata.scpoy[ihit], _scdata.scpoz[ihit], _scdata.scene[ihit]);        
     }
-    _hm.h1[static_cast<int>(HistManager::h1::fem_evt)]->Fill(_evdata.evevt, _fem/_edep);
+    if(_edep != 0) {
+        _hm.h1[static_cast<int>(HistManager::h1::fem_evt)]->Fill(_evdata.evevt, _fem/_edep);
+    }
+    else {
+        _hm.h1[static_cast<int>(HistManager::h1::fem_evt)]->Fill(_evdata.evevt, 0);    
+    }
 }
 
 Bool_t EventAnalyzer::Notify()
