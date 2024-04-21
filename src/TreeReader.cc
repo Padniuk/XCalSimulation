@@ -2,34 +2,34 @@
 
 TreeReader::TreeReader() {}
 
-void TreeReader::InitializeReadEventTreeBranches(TTree *tree, Event_Data &_data, Sim_Branch &_branch)
+void TreeReader::InitializeReadEventTreeBranches(TTree *tree, std::unique_ptr<Event_Data>& _data, Sim_Branch &_branch)
 {
-    tree->SetBranchAddress("evevt", &_data.evevt, &_branch.b_evevt);
-    tree->SetBranchAddress("evrun", &_data.evrun, &_branch.b_evrun);
-    tree->SetBranchAddress("evwgt", &_data.evwgt, &_branch.b_evwgt);
-    tree->SetBranchAddress("evtim", &_data.evtim, &_branch.b_evtim);
-    tree->SetBranchAddress("evsig", &_data.evsig, &_branch.b_evsig);
-    tree->SetBranchAddress("evene", &_data.evene, &_branch.b_evene);
-    tree->SetBranchAddress("evpoe", &_data.evpoe, &_branch.b_evpoe);
-    tree->SetBranchAddress("evpop", &_data.evpop, &_branch.b_evpop);
-    tree->SetBranchAddress("evnch", &_data.evnch, &_branch.b_evnch);
-    tree->SetBranchAddress("evpro", &_data.evpro, &_branch.b_evpro);
+    tree->SetBranchAddress("evevt", &_data->evevt, &_branch.b_evevt);
+    tree->SetBranchAddress("evrun", &_data->evrun, &_branch.b_evrun);
+    tree->SetBranchAddress("evwgt", &_data->evwgt, &_branch.b_evwgt);
+    tree->SetBranchAddress("evtim", &_data->evtim, &_branch.b_evtim);
+    tree->SetBranchAddress("evsig", &_data->evsig, &_branch.b_evsig);
+    tree->SetBranchAddress("evene", &_data->evene, &_branch.b_evene);
+    tree->SetBranchAddress("evpoe", &_data->evpoe, &_branch.b_evpoe);
+    tree->SetBranchAddress("evpop", &_data->evpop, &_branch.b_evpop);
+    tree->SetBranchAddress("evnch", &_data->evnch, &_branch.b_evnch);
+    tree->SetBranchAddress("evpro", &_data->evpro, &_branch.b_evpro);
 }
 
-void TreeReader::InitializeReadCalorimeterTreeBranches(TTree *tree, Calorimeter_Data &_data, Sim_Branch &_branch)
+void TreeReader::InitializeReadCalorimeterTreeBranches(TTree *tree, std::unique_ptr<Calorimeter_Data>& _data, Sim_Branch &_branch)
 {
-    tree->SetBranchAddress("nsch", &_data.nsch, &_branch.b_nsch);
-    tree->SetBranchAddress("scori", _data.scori, &_branch.b_scori);
-    tree->SetBranchAddress("scci0", _data.scci0, &_branch.b_scci0);
-    tree->SetBranchAddress("scci1", _data.scci1, &_branch.b_scci1);
-    tree->SetBranchAddress("scpox", _data.scpox, &_branch.b_scpox);
-    tree->SetBranchAddress("scpoy", _data.scpoy, &_branch.b_scpoy);
-    tree->SetBranchAddress("scpoz", _data.scpoz, &_branch.b_scpoz);
-    tree->SetBranchAddress("scene", _data.scene, &_branch.b_scene);
-    tree->SetBranchAddress("sctime", _data.sctime, &_branch.b_sctime);
-    tree->SetBranchAddress("ncont", _data.ncont, &_branch.b_ncont);
-    tree->SetBranchAddress("sccontpdg", _data.sccontpdg, &_branch.b_sccontpdg);
-    tree->SetBranchAddress("sccontene", _data.sccontene, &_branch.b_sccontene);
+    tree->SetBranchAddress("nsch", &_data->nsch, &_branch.b_nsch);
+    tree->SetBranchAddress("scori", _data->scori, &_branch.b_scori);
+    tree->SetBranchAddress("scci0", _data->scci0, &_branch.b_scci0);
+    tree->SetBranchAddress("scci1", _data->scci1, &_branch.b_scci1);
+    tree->SetBranchAddress("scpox", _data->scpox, &_branch.b_scpox);
+    tree->SetBranchAddress("scpoy", _data->scpoy, &_branch.b_scpoy);
+    tree->SetBranchAddress("scpoz", _data->scpoz, &_branch.b_scpoz);
+    tree->SetBranchAddress("scene", _data->scene, &_branch.b_scene);
+    tree->SetBranchAddress("sctime", _data->sctime, &_branch.b_sctime);
+    tree->SetBranchAddress("ncont", _data->ncont, &_branch.b_ncont);
+    tree->SetBranchAddress("sccontpdg", _data->sccontpdg, &_branch.b_sccontpdg);
+    tree->SetBranchAddress("sccontene", _data->sccontene, &_branch.b_sccontene);
 }
 
 // tree->SetBranchAddress("nmcp", &_data.nmcp, &_branch.b_nmcp);

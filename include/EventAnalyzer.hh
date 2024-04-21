@@ -40,8 +40,8 @@ class EventAnalyzer
   private:
     Double_t _fem;
     Double_t _edep;
-    Event_Data _evdata;
-    Calorimeter_Data _scdata;
+    std::unique_ptr<Event_Data> _evdata  = std::make_unique<Event_Data>();
+    std::unique_ptr<Calorimeter_Data> _scdata = std::make_unique<Calorimeter_Data>();
 
     Sim_Branch  _branch;
 

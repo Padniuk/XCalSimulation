@@ -258,35 +258,35 @@ struct Track_Data {
 struct Tracker_Data {
     public:
         Int_t           nsth;
-        Int_t           stori[8000];
-        Int_t           stci0[8000];
-        Int_t           stci1[8000];
-        Double_t        stpox[8000];
-        Double_t        stpoy[8000];
-        Double_t        stpoz[8000];
-        Float_t         stedp[8000];
-        Float_t         sttim[8000];
-        Float_t         stmox[8000];
-        Float_t         stmoy[8000];
-        Float_t         stmoz[8000];
-        Float_t         stptl[8000];
-        Int_t           stmcp[8000];
+        Int_t           stori[30000];
+        Int_t           stci0[30000];
+        Int_t           stci1[30000];
+        Double_t        stpox[30000];
+        Double_t        stpoy[30000];
+        Double_t        stpoz[30000];
+        Float_t         stedp[30000];
+        Float_t         sttim[30000];
+        Float_t         stmox[30000];
+        Float_t         stmoy[30000];
+        Float_t         stmoz[30000];
+        Float_t         stptl[30000];
+        Int_t           stmcp[30000];
 };
 
 struct Calorimeter_Data {
     public:
         Int_t           nsch;
-        Int_t           scori[8000];
-        Int_t           scci0[8000];
-        Int_t           scci1[8000];
-        Float_t         scpox[8000];
-        Float_t         scpoy[8000];
-        Float_t         scpoz[8000]; 
-        Float_t         scene[8000]; 
-        Float_t         sctime[8000];
-        Int_t           ncont[8000];
-        Int_t           sccontpdg[8000][100];
-        Float_t         sccontene[8000][100];
+        Int_t           scori[30000];
+        Int_t           scci0[30000];
+        Int_t           scci1[30000];
+        Float_t         scpox[30000];
+        Float_t         scpoy[30000];
+        Float_t         scpoz[30000]; 
+        Float_t         scene[30000]; 
+        Float_t         sctime[30000];
+        Int_t           ncont[30000];
+        Int_t           sccontpdg[30000][100];
+        Float_t         sccontene[30000][100];
 };
 
 

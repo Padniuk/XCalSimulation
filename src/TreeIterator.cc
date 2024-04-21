@@ -27,7 +27,7 @@ void TreeIterator::Init(TTree *tree)
   // Initialize the current tree.
   if (!tree) return;
   fChain = tree;
-  fChain->SetMakeClass(1);
+  fChain->SetMakeClass(0);
   nEntries = tree->GetEntries();
   finalEntry = nEntries-1;
   // Initialize Event Handler, adding the criteria of each HistoMaker to it's list of criteria.
@@ -46,7 +46,6 @@ Bool_t TreeIterator::Process(Long64_t entry)
     fChain->GetEntry(entry);
     nEntriesProcessed++;
     eAnalyzer.Analyze();
-    
     return true;
 }
 
